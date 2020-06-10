@@ -1,0 +1,170 @@
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/checkout_nested_scroll_view"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+    android:layout_width="match_parent"
+    android:padding="16dp"
+    android:layout_height="wrap_content">
+
+    <ImageButton
+        android:id="@+id/orderHistory_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/ic_history_selector"
+        android:enabled="true"
+        android:padding="8dp"
+        android:background="@drawable/btn_trans_bg"/>
+    <ImageButton
+        android:id="@+id/clearCompareList_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_alignParentEnd="true"
+        android:enabled="false"
+        android:src="@drawable/ic_clear_compare_selector"
+        android:background="@drawable/btn_trans_bg"/>
+</RelativeLayout>
+
+        <com.secondary.alalamiastorez.EmptyRecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:layout_marginTop="120dp"
+            android:id="@+id/emptyCheckoutPlaceHolderImg"
+            android:layout_width="wrap_content"
+            android:layout_height="260dp"
+            android:visibility="gone"
+            android:src="@drawable/gray_bag3"/>
+
+        <net.cachapa.expandablelayout.ExpandableLayout
+            android:id="@+id/checkout_expandable_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="20dp"
+            app:el_duration="500"
+            app:el_expanded="false"
+            app:el_parallax="0.5">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageButton
+                    android:id="@+id/cancel_order_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_close"
+                    android:background="#00000000"
+                    android:layout_margin="10dp"
+                    android:layout_gravity="end"/>
+                <EditText
+                    android:id="@+id/edit_text_customer_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:paddingStart="26dp"
+                    android:paddingEnd="26dp"
+                    android:hint="Name"
+                    android:background="@drawable/shape_dummy_rect"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="10"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/edit_text_customer_country_number"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="40dp"
+                        android:gravity="center"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:text="+2"
+                        android:background="@drawable/shape_dummy_rect"/>
+
+                    <EditText
+                        android:id="@+id/edit_text_customer_number"
+                        android:layout_width="0dp"
+                        android:layout_weight="8"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:inputType="phone"
+                        android:paddingStart="26dp"
+                        android:paddingEnd="26dp"
+                        android:hint="Number"
+                        android:background="@drawable/shape_dummy_rect"/>
+                </LinearLayout>
+
+
+                <EditText
+                    android:id="@+id/edit_text_customer_shipping_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="30dp"
+                    android:paddingBottom="30dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:paddingStart="26dp"
+                    android:paddingEnd="26dp"
+                    android:textColorHighlight="@color/darkBlue"
+                    android:hint="Shipping address"
+                    android:background="@drawable/shape_dummy_rect"/>
+
+                <EditText
+                    android:id="@+id/edit_text_customer_additional_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="40dp"
+                    android:paddingBottom="40dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:paddingStart="26dp"
+                    android:paddingEnd="26dp"
+                    android:textColorHighlight="@color/darkBlue"
+                    android:hint="Additional details (optional)"
+                    android:background="@drawable/shape_dummy_rect"/>
+
+            </LinearLayout>
+        </net.cachapa.expandablelayout.ExpandableLayout>
+
+        <Button
+            android:id="@+id/order_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="order"
+            android:textColor="#fff"
+            android:background="@drawable/shape_dummy_rect2"
+            android:layout_margin="20dp"
+            android:visibility="gone"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"/>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

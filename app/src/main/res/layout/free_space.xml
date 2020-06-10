@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+    <com.google.android.youtube.player.YouTubePlayerView
+        android:layout_width="match_parent"
+        android:id="@+id/ypv"
+        android:layout_height="240dp"/>
+
+        <com.google.android.youtube.player.YouTubeThumbnailView
+            android:layout_width="match_parent"
+            android:id="@+id/thumbnail"
+            android:layout_height="240dp"/>
+    <Button
+        android:visibility="gone"
+        android:id="@+id/startVideo_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_centerInParent="true"
+        android:text="Play"/>
+    </RelativeLayout>
+</ScrollView>
